@@ -1,35 +1,48 @@
-#include <iostream> // 钓鱼题，ac的可以联系作者
+#include <bits/stdc++.h>
 using namespace std;
-int a, b, c, d, e;
-bool mp[6][6];
-int main() {
-    mp[4][5] = mp[5][4] = mp[1][5] = mp[5][1] = mp[1][3] = mp[3][1] = mp[2][3] = mp[3][2] = mp[2][5] = mp[5][2] = 1;
-    cin >> a >> b >> c >> d >> e;
-    if ((a - 3) % 12 == 0) a = 12;
-    else a = (a - 3) % 12;
-    int t = d * 60 + e;
-    int s;
-    if (t >= 23 * 60 || t < 60) s = 1;
-    else for (int i = 1; i < 12; i++) {
-        if (t >= (2 * i - 1) * 60 && t < 60 * (2 * i + 1)) s = i + 1;
-    }
-    int up, down;
-    up = (a + b + c) % 8;
-    down = (a + b + c + s) % 8;
-    int p, q;
-    if (up == 1 || up == 2) p = 1;
-    else if (up == 4 || up == 5) p = 2;
-    else if (up == 6) p = 3;
-    else if (up == 3) p = 4;
-    else p = 5;
-    if (down == 1 || down == 2) q = 1;
-    else if (down == 4 ||down == 5) q = 2;
-    else if (down == 6) q = 3;
-    else if (down == 3) q = 4;
-    else q = 5;
-    if (p == q) cout << "emm\n";
-    else if (mp[p][q]) cout << "haoye\n";
-    else cout << "gg\n";
 
+// 八卦与五行对应关系：
+// 乾(1)和兑(2)对应金(0)，震(4)和巽(5)对应木(2)，坎(6)对应水(1)，
+// 离(3)对应火(3)，艮(7)和坤(0)对应土(4)
+map<int, int> relation = {{1, 0}, {2, 0}, {4, 2}, {5, 2}, {6, 1}, {3, 3}, {7, 4}, {0, 4}};
+
+// 计算年号
+int year(int y) {
+    int x = (y - 3) % 12;
+    if (x == 0)
+        x = 12;
+    return x;
+}
+
+// 计算时辰号
+int chen(int hour) {
+    int x = hour / 2 + (hour % 2) + 1;
+    if (x == 13)
+        x = 1;
+    return x;
+}
+
+int main(void) {
+    // a:年, b:月, c:日, d:时, e:分
+    int a, b, c, d, e;
+    cin >> a >> b >> c >> d >> e;
+    
+    // 计算年号和时辰号
+    a = year(a);
+    d = chen(d);
+    
+    // 计算上下卦
+    int up = (a + b + c) % 8;       // 上卦
+    int down = (a + b + c + d) % 8; // 下卦
+    
+    // 获取上下卦对应的五行
+    int upxing = relation[up];     // 上卦对应的五行
+    int downxing = relation[down]; // 下卦对应的五行
+    
+    // 判断五行关系
+    if ((upxing + 1) % 5 == downxing || (downxing + 1) % 5 == upxing) cout << "haoye"; // 五行相生
+    else if (upxing == downxing) cout << "emm";   // 五行相同
+    else cout << "gg";    // 五行相克
+        
     return 0;
 }

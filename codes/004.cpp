@@ -12,3 +12,9 @@ int main() {
     
     return 0;
 }
+
+
+//  python 代码
+//  n=input()
+//  s=input()
+//  print(s.count("swust"))
