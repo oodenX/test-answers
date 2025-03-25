@@ -15,3 +15,9 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     x = int(input())
+//     print(bin(x).count("1"))

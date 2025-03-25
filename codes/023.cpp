@@ -28,3 +28,19 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     a, b, r = map(int, input().split())
+//     xa, ya = map(int, input().split())
+//     xb, yb = map(int, input().split())
+//     xc, yc = map(int, input().split())
+//     l = 2 * r
+//     d = [((xa - xb) ** 2 + (ya - yb) ** 2) ** 0.5, ((xa - xc) ** 2 + (ya - yc) ** 2) ** 0.5, ((xb - xc) ** 2 + (yb - yc) ** 2) ** 0.5]
+//     for i in range(3):
+//         if d[i] >= l:
+//             print("YES")
+//             break
+//     else:
+//         print("NO")

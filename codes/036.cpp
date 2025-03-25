@@ -20,3 +20,20 @@ int main() {
     cout << ans << '\n';
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// a = list(map(int, input().split()))
+// pre = [0] * 1005
+// ans = 0
+// for i in range(1, n + 1):
+//     for j in range(1, i):
+//         if a[j] < a[i]:
+//             pre[i] += 1
+// for i in range(1, n + 1):
+//     for j in range(i + 1, n + 1):
+//         x = n - j - a[j] + 1 + pre[j]
+//         if a[j] > a[i] and pre[i] and x:
+//             ans += (pre[i] * x) % 3344
+//         ans %= 3344
+// print(ans)

@@ -19,3 +19,24 @@ int main() {
 
     return 0;
 }
+
+// python 代码
+// n, m = map(int, input().split())
+// s = input()
+// a = [0] * 1005
+// cnt = 1
+// i = 0
+// p = False
+// while a[cnt] <= a[cnt - 1]:
+//     if i >= n:
+//         break
+//     a[cnt] = a[cnt] * 10 + int(s[i])
+//     i += 1
+//     if a[cnt] > a[cnt - 1]:
+//         cnt += 1
+// if cnt - 1 >= m:
+//     p = True
+// if p:
+//     print("miaomiao")
+// else:
+//     print("wangwang")

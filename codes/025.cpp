@@ -38,3 +38,18 @@ int main() {
     solve();
     return 0;
 }
+
+// python 代码
+// n, k = map(int, input().split())
+// p = [(0, 1), (0, 2)]
+// for i in range(28, 0, -1):
+//     p.append((0, p[-1][1] << 1))
+// for i in range(1, k + 1):
+//     p[i] = (int(input()), p[i][1])
+// q = [(int(input()), 0) for _ in range(n)]
+// for i in range(n):
+//     for j in range(1, k + 1):
+//         if q[i][0] % p[j][0] == 0:
+//             q[i] = (q[i][0], q[i][1] + p[j][1])
+// q.sort(key=lambda x: (-x[1], x[0]))
+// print(*[i[0] for i in q])

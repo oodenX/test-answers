@@ -14,3 +14,7 @@ int main() {
     printf("%d", ans);
 }
 
+// python 代码
+// n = int(input())
+// a = list(map(int, input().split()))
+// print(max(max(a) - 25, 0))

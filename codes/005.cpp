@@ -15,3 +15,16 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     s, k, n = map(int, input().split())
+//     if k == 0:
+//         print(0)
+//     else:
+//         op = n // k
+//         if op >= s:
+//             print(s * k)
+//         else:
+//             print(n)

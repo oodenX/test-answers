@@ -46,3 +46,22 @@ int main(void) {
         
     return 0;
 }
+
+// python 代码
+// a, b, c, d, e = map(int, input().split())
+// a = (a - 3) % 12
+// if a == 0:
+//     a = 12
+// d = d // 2 + d % 2 + 1
+// if d == 13:
+//     d = 1
+// up = (a + b + c) % 8
+// down = (a + b + c + d) % 8
+// upxing = {1: 0, 2: 0, 4: 2, 5: 2, 6: 1, 3: 3, 7: 4, 0: 4}[up]
+// downxing = {1: 0, 2: 0, 4: 2, 5: 2, 6: 1, 3: 3, 7: 4, 0: 4}[down]
+// if (upxing + 1) % 5 == downxing or (downxing + 1) % 5 == upxing:
+//     print("haoye")
+// elif upxing == downxing:
+//     print("emm")
+// else:
+//     print("gg")

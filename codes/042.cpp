@@ -78,3 +78,49 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// a = [[0] * 14 for _ in range(4)]
+// sum = [0] * 4
+// for player in range(1, 4):
+//     sum[player] = n
+//     for card in map(int, input().split()):
+//         a[player][card] += 1
+// last = [0, 0, 0, 0]
+// i = 1
+// while True:
+//     tmp = 0
+//     who = (i - 1) % 3 + 1
+//     if last[3] == who:
+//         last[1] = 0
+//         last[2] = 0
+//     for j in range(sum[who] + 1):
+//         for k in range(1, 14):
+//             if j == 0 and k <= last[1]:
+//                 continue
+//             cardsToPlay = j
+//             if last[2] > 0:
+//                 cardsToPlay += last[2]
+//             else:
+//                 cardsToPlay = 1
+//             if a[who][k] >= cardsToPlay:
+//                 sum[who] -= cardsToPlay
+//                 tmp = 1
+//                 last[1] = k
+//                 last[2] = cardsToPlay
+//                 last[3] = who
+//                 a[who][k] -= cardsToPlay
+//                 if sum[who] == 0:
+//                     if who == 1:
+//                         print("LBY")
+//                     elif who == 2:
+//                         print("HXC")
+//                     elif who == 3:
+//                         print("WZY")
+//                     exit()
+//                 break
+//         if tmp:
+//             break
+//     i += 1
+

@@ -45,3 +45,28 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     n = int(input())
+//     s = input()
+//     a = [0] * 5
+//     ans = 998244354
+//     for i in range(n):
+//         if s[i] == "F":
+//             a[1] += 1
+//         elif s[i] == "B":
+//             a[2] += 1
+//         elif s[i] == "L":
+//             a[3] += 1
+//         elif s[i] == "R":
+//             a[4] += 1
+//     b = [0] * 5
+//     b[1] = (a[2] * 2 + a[3] + a[4]) % 998244353
+//     b[2] = (a[1] * 2 + a[3] + a[4]) % 998244353
+//     b[3] = (a[1] + a[2] + a[4] * 2) % 998244353
+//     b[4] = (a[1] + a[2] + a[3] * 2) % 998244353
+//     for i in range(1, 5):
+//         ans = min(b[i], ans)
+//     print(ans)

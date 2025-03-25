@@ -26,3 +26,19 @@ int main(){
 
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// s = input()
+// q = [0] * 1005
+// k = len(s)
+// q[k] += 1
+// y = s
+// for _ in range(n - 1):
+//     s = input()
+//     q[len(s)] += 1
+// for i in range(1005):
+//     if q[i] % 2 == 1:
+//         print("NO")
+//         exit()
+// print(y)

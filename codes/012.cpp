@@ -39,3 +39,31 @@ int main()
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     n = int(input())
+//     s = input()
+//     sum = 0
+//     a = b = c = d = 1
+//     for i in range(n):
+//         if s[i].isupper():
+//             if a:
+//                 sum += 1
+//             a = 0
+//         elif s[i].islower():
+//             if b:
+//                 sum += 1
+//             b = 0
+//         elif s[i].isdigit():
+//             if c:
+//                 sum += 1
+//             c = 0
+//         elif d:
+//             sum += 1
+//             d = 0
+//     if sum >= 3:
+//         print("YES")
+//     else:
+//         print("NO")

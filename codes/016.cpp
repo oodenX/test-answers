@@ -19,3 +19,18 @@ int main() {
 
     return 0;
 }
+
+// python 代码
+// n, x = map(int, input().split())
+// s = list(map(int, input().split()))
+// sum = 0
+// for i in s:
+//     sum += i
+// if x == 0:
+//     print(sum)
+// else:
+//     for i in range(n - 1):
+//         t = s[i] % x
+//         s[i + 1] += t
+//     h = s[n - 1] % x
+//     print(h)

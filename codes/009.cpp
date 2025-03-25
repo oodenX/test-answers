@@ -18,3 +18,16 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     n = int(input())
+//     prices = list(map(int, input().split()))
+//     profit = 0
+//     for i in range(1, n):
+//         tmp = prices[i] - prices[i - 1]
+//         if tmp > 0:
+//             profit += tmp
+//     print(profit)
+

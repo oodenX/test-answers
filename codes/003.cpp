@@ -10,3 +10,7 @@ int main(){
 	printf("%d", cnt);
     return 0;
 }
+
+// python 代码
+// x = int(input())
+// print(bin(x).count("1"))

@@ -40,3 +40,34 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     n, k = map(int, input().split())
+//     s = input()
+//     sum1 = s.count("0")
+//     sum0 = n - sum1
+//     M = max(sum1, sum0)
+//     N = min(sum1, sum0)
+//     if M == N:
+//         if k <= M:
+//             print(2 * k)
+//         else:
+//             if k % 2:
+//                 print(n - 1)
+//             else:
+//                 print(n)
+//     else:
+//         if k <= N:
+//             print(M - N + 2 * k)
+//         elif k > N and k < M:
+//             if (k - N) % 2 == 0:
+//                 print(n)
+//             elif (k - N) % 2 == 1:
+//                 print(n - 1)
+//         else:
+//             if (k - M) % 2 == 0 or (k - N) % 2 == 0:
+//                 print(n)
+//             else:
+//                 print(n - 1)

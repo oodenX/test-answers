@@ -17,3 +17,15 @@ int main () {
     cout << ans << '\n';
     return 0;
 }
+
+// python 代码
+// a, b = input().split()
+// ans = 0
+// for i in range(10000, 100000):
+//     s = str(i)
+//     s += s[::-1]
+//     if int(s) >= int(a) and int(s) <= int(b):
+//         ans += 1
+//     if int(s) > int(b):
+//         break
+// print(ans)

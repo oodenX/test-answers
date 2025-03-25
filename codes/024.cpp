@@ -19,3 +19,22 @@ int main() {
     
 	return 0;
 }
+
+// python 代码
+// n = int(input())
+// p = [0] * n
+// for i in range(n):
+//     l, r = map(int, input().split())
+//     p[l] = i
+//     p[i] = r
+// cnt = 0
+// ans = 0
+// for i in range(p[0], n):
+//     cnt += 1
+//     if i == n - 1:
+//         break
+// if cnt * 2 < n:
+//     ans = cnt
+// else:
+//     ans = n - cnt
+// print(ans)

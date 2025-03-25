@@ -18,6 +18,18 @@ int main() {
     while (t--) {
         solve();
     }
-
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     s = input()
+//     ans = 0
+//     for i in range(len(s)):
+//         ans = ans * 10 + int(s[i])
+//         ans %= 7
+//     if ans & 1:
+//         print("lmly")
+//     else:
+//         print("tzz")

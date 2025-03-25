@@ -15,3 +15,12 @@ int main() {
     
     return 0;
 }
+
+// python 代码
+// n, x = map(int, input().split())
+// a = [0] * (3 * 10 ** 5 + 5)
+// ans = 0
+// for i in map(int, input().split()):
+//     ans += a[abs(i - x)]
+//     a[i] += 1
+// print(ans)

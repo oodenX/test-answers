@@ -21,3 +21,16 @@ int main() {
 
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// a = list(map(int, input().split()))
+// for i in range(n - 2, -1, -1):
+//     a[i] += a[i + 1]
+// temp = a[-1]
+// for i in range(n - 2, -1, -1):
+//     temp = min(a[i] // (n - i), temp)
+// ans = 0
+// for i in range(n - 1, -1, -1):
+//     ans += a[i] - temp * (n - i)
+// print(ans)

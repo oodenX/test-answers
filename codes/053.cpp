@@ -12,3 +12,11 @@ int main() {
     cout << maxn << '\n' << pos << '\n';
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// a = list(map(int, input().split()))
+// maxn = max(a)
+// pos = a.index(maxn) + 1
+// print(maxn)
+// print(pos)

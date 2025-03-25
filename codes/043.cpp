@@ -19,3 +19,16 @@ signed main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     ans = 0
+//     mp = {}
+//     n = int(input())
+//     for x in list(map(int, input().split())):
+//         x %= 60
+//         ans += mp.get((60 - x) % 60, 0)
+//         mp[x] = mp.get(x, 0) + 1
+//     print(ans)
+

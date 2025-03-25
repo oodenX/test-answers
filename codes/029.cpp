@@ -12,3 +12,16 @@ int main (){
 
     return 0;
 }
+
+// python 代码
+// k = int(input())
+// if k % 2 == 0:
+//     print("ac")
+// elif k % 3 == 0:
+//     print("pe")
+// elif k % 5 == 0:
+//     print("re")
+// elif k % 7 == 0:
+//     print("wa")
+// else:
+//     print("gg")

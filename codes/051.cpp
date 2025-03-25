@@ -17,3 +17,12 @@ int main() {
     for (int i = 0; i < n; i++) cout << box[i].m << ' ';
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// box = []
+// for _ in range(n):
+//     m, x, y = map(int, input().split())
+//     box.append((m, x, y))
+// box.sort(key=lambda x: (x[1], -x[2]))
+// print(*[i[0] for i in box])

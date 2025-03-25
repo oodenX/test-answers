@@ -28,3 +28,17 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     s = input()
+//     ans = 0
+//     for i in range(len(s) - 1):
+//         if s[i] == "x" and s[i + 1] == "y":
+//             ans += 1
+//             i += 1
+//         elif s[i] == "y" and s[i + 1] == "x":
+//             ans += 1
+//             i += 1
+//     print(ans)

@@ -13,3 +13,13 @@ int main() {
 
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// cnt = 0
+// for a in range(1, n + 1):
+//     for b in range(1, n + 1):
+//         for c in range(1, n + 1):
+//             if a * a + b * b == c * c:
+//                 cnt += 1
+// print(cnt // 2)

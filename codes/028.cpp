@@ -26,3 +26,21 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     n, m = map(int, input().split())
+//     ans = 0
+//     sum = 0
+//     minn = 105
+//     for i in range(n):
+//         for j in range(m):
+//             x = int(input())
+//             ans += abs(x)
+//             minn = min(minn, abs(x))
+//             if x < 0:
+//                 sum += 1
+//     if sum & 1:
+//         ans = ans - minn - minn
+//     print(ans)

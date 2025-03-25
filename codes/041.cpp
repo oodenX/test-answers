@@ -11,3 +11,12 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     s = input()
+//     if "l" in s and "a" in s and "n" in s:
+//         print("dao")
+//     else:
+//         print("qwq")

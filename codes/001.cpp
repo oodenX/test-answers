@@ -29,3 +29,11 @@ int main() {
 	return 0;
 }
 
+// python 代码
+// n = int(input())
+// for _ in range(n):
+//     s = input()
+//     if s.count("0") == len(s) - 3:
+//         print("YES")
+//     else:
+//         print("NO")

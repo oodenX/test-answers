@@ -1,134 +1,93 @@
 #include <iostream>
+#include <vector>
 #include <queue>
-#include <unordered_set>
+#include <set>
+#include <string>
+#include <algorithm>
+
 using namespace std;
 
-// 使用整数数组表示3x3矩阵
-struct State {
-    int mat[3][3];
-    string ops;
-    
-    // 矩阵比较
-    bool operator==(const State& other) const {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (mat[i][j] != other.mat[i][j]) return false;
-            }
-        }
-        return true;
-    }
-};
+// 定义矩阵类型
+using Matrix = vector<vector<int>>;
 
-// 哈希函数
-struct StateHash {
-    size_t operator()(const State& s) const {
-        string key;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                key += to_string(s.mat[i][j]) + ",";
-            }
-        }
-        return hash<string>()(key);
-    }
-};
-
-// 操作A：顺时针旋转90度
-State rotateClockwise(const State& s) {
-    State next = {{{0}}, s.ops + "A"};
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            next.mat[j][2-i] = s.mat[i][j];
-        }
-    }
-    return next;
+// 矩阵操作函数
+Matrix rotateClockwise(const Matrix& mat) {
+    Matrix rotated(3, vector<int>(3));
+    for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 3; ++j)
+            rotated[j][2 - i] = mat[i][j];
+    return rotated;
 }
 
-// 操作B：逆时针旋转90度
-State rotateCounterClockwise(const State& s) {
-    State next = {{{0}}, s.ops + "B"};
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            next.mat[2-j][i] = s.mat[i][j];
-        }
-    }
-    return next;
+Matrix rotateAnticlockwise(const Matrix& mat) {
+    Matrix rotated(3, vector<int>(3));
+    for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 3; ++j)
+            rotated[2 - j][i] = mat[i][j];
+    return rotated;
 }
 
-// 操作C：左右翻转
-State flipLeftRight(const State& s) {
-    State next = s;
-    next.ops += "C";
-    for (int i = 0; i < 3; i++) {
-        swap(next.mat[i][0], next.mat[i][2]);
-    }
-    return next;
+Matrix flipHorizontal(const Matrix& mat) {
+    Matrix flipped = mat;
+    for (auto& row : flipped)
+        reverse(row.begin(), row.end());
+    return flipped;
 }
 
-// 操作D：上下翻转
-State flipUpDown(const State& s) {
-    State next = s;
-    next.ops += "D";
-    for (int j = 0; j < 3; j++) {
-        swap(next.mat[0][j], next.mat[2][j]);
-    }
-    return next;
+Matrix flipVertical(const Matrix& mat) {
+    Matrix flipped = mat;
+    reverse(flipped.begin(), flipped.end());
+    return flipped;
 }
 
-int main() {
-    State start, target;
-    
-    // 输入初始矩阵
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cin >> start.mat[i][j];
-        }
-    }
-    
-    // 输入目标矩阵
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cin >> target.mat[i][j];
-        }
-    }
-    
-    // 如果初始即为目标
-    if (start == target) {
-        cout << "" << endl;
-        return 0;
-    }
-    
-    // BFS查找最短操作序列
-    queue<State> q;
-    unordered_set<State, StateHash> visited;
-    
-    q.push(start);
+// BFS 求解最短路径
+string solve(const Matrix& start, const Matrix& target) {
+    queue<pair<Matrix, string>> q;
+    set<Matrix> visited;
+
+    q.push({start, ""});
     visited.insert(start);
-    
+
     while (!q.empty()) {
-        State curr = q.front();
+        auto [current, path] = q.front();
         q.pop();
-        
-        // 尝试四种操作，按字典序
-        State nextStates[] = {
-            rotateClockwise(curr),          // A
-            rotateCounterClockwise(curr),   // B
-            flipLeftRight(curr),            // C
-            flipUpDown(curr)                // D
+
+        if (path.length() > 108) continue;
+        if (current == target) return path;
+
+        vector<pair<string, Matrix>> operations = {
+            {"A", rotateClockwise(current)},
+            {"B", rotateAnticlockwise(current)},
+            {"C", flipHorizontal(current)},
+            {"D", flipVertical(current)}
         };
-        
-        for (const auto& next : nextStates) {
-            if (next == target) {
-                cout << next.ops << '\n';
-                return 0;
-            }
-            
-            if (visited.find(next) == visited.end()) {
-                visited.insert(next);
-                q.push(next);
+
+        for (const auto& [op, nextMatrix] : operations) {
+            if (visited.find(nextMatrix) == visited.end()) {
+                visited.insert(nextMatrix);
+                q.push({nextMatrix, path + op});
             }
         }
     }
-    
-    cout << "are you joking?" << '\n';
+
+    return "are you joking?";
+}
+
+// 主函数
+int main() {
+    Matrix start(3, vector<int>(3));
+    Matrix target(3, vector<int>(3));
+
+    // 输入初始矩阵和目标矩阵
+    for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 3; ++j)
+            cin >> start[i][j];
+    for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 3; ++j)
+            cin >> target[i][j];
+
+    // 输出结果
+    cout << solve(start, target) << endl;
+
     return 0;
 }

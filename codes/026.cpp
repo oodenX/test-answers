@@ -28,3 +28,19 @@ int main() {
 
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// s = input()
+// q = []
+// for i in range(1, n + 1):
+//     if s[i - 1] == '0':
+//         q.insert(0, i)
+//     else:
+//         q.append(i)
+// arr = list(map(int, input().split()))
+// p = []
+// for i in range(n):
+//     p.append((arr[i], q.pop(0)))
+// p.sort(key=lambda x: -x[0])
+// print(*[i[1] for i in p])

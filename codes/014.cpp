@@ -12,3 +12,16 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// t = int(input())
+// for _ in range(t):
+//     a, b, k = map(int, input().split())
+//     if a > b and (a - b) % k == 0:
+//         print("YES")
+//     elif b > a and (b - a) % k == 0:
+//         print("YES")
+//     elif a == b:
+//         print("YES")
+//     else:
+//         print("NO")

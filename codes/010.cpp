@@ -23,3 +23,19 @@ int main() {
     }
     return 0;
 }
+
+// python 代码
+// n = int(input())
+// a = list(map(int, input().split()))
+// max1 = max(a)
+// cnt = a.count(max1)
+// max2 = max([i for i in a if i != max1])
+// if cnt >= 2:
+//     print(*[max1] * n)
+// else:
+//     for i in a:
+//         if i != max1:
+//             print(max1, end=' ')
+//         else:
+//             print(max2, end=' ')
+// print()
